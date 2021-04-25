@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       #balance{display: none;}
+       #deposit_pay{display: none;}
+       #deposit{display: none;}
+       #checkout{display: none;}
+       #checkout_pay{display: none;}
+        #container{
+            width: 50%;
+            height: auto;
+            border: 7px double;
+            margin: 0 auto;
+            text-align: center;
+            padding: 1%;
+        }
+        input{
+            margin: 0 auto;
+            text-align: center;
+            width: 30%;
+            height: 25px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 15px
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <input type="text" id="password" autofocus><br><br>
+    <input type="submit" value="check" id="passwordCheck" onclick="password_check()"><br><br>
+    <input type="text" id="balance" value="1000"><br>
+    <input type="text" id="deposit"><br>
+    <input type="submit" value="deposit" id="deposit_pay" onclick="add()"><br>
+    <input type="text" id="checkout"><br>
+    <input type="submit" value="checkout" id="checkout_pay" onclick="sub()">
+</div>
+    <script>
+        function password_check(){
+            var password=document.getElementById('password').value
+            if(password==123){
+                document.getElementById('balance').style.display='block'
+                document.getElementById('deposit').style.display='block'
+                document.getElementById('deposit_pay').style.display='block'
+                document.getElementById('checkout').style.display='block'
+                document.getElementById('checkout_pay').style.display='block'
+            }
+        }
+       function add(){
+            var balance=Number(document.getElementById('balance').value)
+            var deposit=Number(document.getElementById('deposit').value)
+            var res=balance+deposit
+            var res_2=document.getElementById('balance').value=res
+            var deposit=Number(document.getElementById('deposit').value=null)
+
+            }
+         function sub(){
+            var balance=Number(document.getElementById('balance').value)
+            var checkout=Number(document.getElementById('checkout').value)
+            var res=balance-checkout
+            if(checkout>=balance && balance!=null){
+                alert("its not possible");document.getElementById('checkout').value=null
+            } 
+            
+            else{
+            var res_2=document.getElementById('balance').value=res
+            var checkout=Number(document.getElementById('checkout').value=null)
+
+        }
+         }
+    </script>
+</body>
+</html>
